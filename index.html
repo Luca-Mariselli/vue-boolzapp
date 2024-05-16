@@ -16,7 +16,7 @@
             <div class="my-pg-container">
                 <div class="my-left-bar">
                     <div class="my-topbar">
-                        <div class="d-flex"><img class="my-img-w" src="./img/avatar_1.jpg" alt=""> <div class="align-content-center">Sofia</div></div>
+                        <div class="d-flex"><img class="my-img-w" src="./img/avatar_3.jpg" alt=""> <div class="align-content-center">Luca</div></div>
                         <div class="d-flex">
                             <div>x</div>
                             <div>x</div>
@@ -35,7 +35,15 @@
                             <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
                         </div>
                     <div class="my-scrollable d-flex flex-column overflow-y-scroll">
-                        <div class="my-rectangle d-flex position-relative ">
+                        <div class="my-rectangle d-flex position-relative" v-for="contact in contacts">
+                            <img class="my-img-w" :src="contact.avatar" alt="">
+                            <div>
+                                <div>{{contact.name}}</div>
+                                <div>Ultimo messaggio inviato</div>
+                            </div>
+                            <div class="my-ora position-absolute top-0 end-0">12.00</div>
+                        </div>
+                        <!-- <div class="my-rectangle d-flex position-relative">
                             <img class="my-img-w" src="./img/avatar_2.jpg" alt="">
                             <div>
                                 <div>Ricevi notifiche di nuovi messaggi</div>
@@ -90,20 +98,12 @@
                                 <div>Attiva notifiche desktop</div>
                             </div>
                             <div class="my-ora position-absolute top-0 end-0">12.00</div>
-                        </div>
-                        <div class="my-rectangle d-flex position-relative">
-                            <img class="my-img-w" src="./img/avatar_2.jpg" alt="">
-                            <div>
-                                <div>Ricevi notifiche di nuovi messaggi</div>
-                                <div>Attiva notifiche desktop</div>
-                            </div>
-                            <div class="my-ora position-absolute top-0 end-0">12.00</div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="my-right-bar">
                     <div class="my-topbar">
-                        <div class="d-flex"><img class="my-img-w" src="./img/avatar_1.jpg" alt=""> <div class="align-content-center">Sofia</div></div>
+                        <div class="d-flex"><img class="my-img-w" src="./img/avatar_1.jpg" alt=""> <div class="align-content-center">Michele</div></div>
                         <div class="d-flex">
                             <div>x</div>
                             <div>x</div>
