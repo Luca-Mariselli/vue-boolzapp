@@ -3,3 +3,131 @@
     padding: 0;
     margin: 0;
 }
+
+.my-bg-container{
+    background: linear-gradient(to bottom, #009688 0%,#009688 22%,#009688 22%,#dadbd4 22%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.my-pg-container{
+    width: 80%;
+    height: calc(100vh - 4rem);
+    display: flex;
+    border: 1px solid #c6c6c2;
+}
+
+.my-left-bar{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.my-right-bar{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.my-topbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: #eaeaea;
+    height: 85px;
+    border: 1px solid #c6c6c2;
+}
+
+.my-img-w{
+    width: 88px;
+    border-radius: 50%;
+    padding: 1rem;
+}
+
+
+.my-rectangle{
+    height: 85px;
+    border-bottom: 1px solid #c6c6c2;
+    border-top: 1px solid #c6c6c2;
+
+}
+
+#bg-blue{
+    background-color: #8edafc;
+}
+
+.my-search{
+    padding: 0.5rem;
+}
+
+.my-rounded-div{
+    width: 88px;
+    height: 83px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.my-rounded-element{
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.my-chat{
+    height: calc(100% - 170px);
+    background-image: url(./img/mine.jpg);
+}
+
+.my-rectangle-chat{
+    height: 85px;
+    border-bottom: 1px solid #c6c6c2;
+    border: 1px solid #c6c6c2;
+
+}
+
+.my-chat-container{
+    width: 80%;
+    height: 100%;
+    align-self: center;
+    justify-self: center;
+    margin: 3rem auto;
+    align-content: center;
+    
+}
+
+.msg-sent{
+    background-color: white;
+}
+
+.msg-recieved{
+    background-color:#d5f9ba; 
+    align-self: end;
+
+}
+
+.msg-sent,
+.msg-recieved{
+    display: flex;
+    position: relative;
+    border-radius: 15px;
+    width: 300px;
+    height: 50px;
+    align-items: center;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.my-ora{
+    font-size: 12px;
+    color: lightgray;
+    margin: 5px;
+}
