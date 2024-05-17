@@ -165,22 +165,27 @@ createApp({
                         }
                     ],
                 }
-            ]
+            ],
+
+            contattoAttivo: 0,
+            itemFocus: 0
             
         }
     },
     
     methods: {
-        caricaMessaggi(){
-            messaggi = this.contacts.messages
-            console.log(messaggi)
-            
+        chatAttiva(indice){
+            this.contattoAttivo = indice
+            this.itemFocus = indice
+            if(this.itemFocus = this.contattoAttivo){
+                document.getElementById(this.contattoAttivo).classList.add("clicked");
+                
+            }
         }
     },
 
     mounted(){
         console.log(`Benvenuto`)
-        this.caricaMessaggi()
     }
 
 }).mount('#app')

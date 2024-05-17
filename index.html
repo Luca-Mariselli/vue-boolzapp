@@ -35,7 +35,7 @@
                             <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
                         </div>
                     <div class="my-scrollable d-flex flex-column overflow-y-scroll">
-                        <div class="my-rectangle d-flex position-relative" v-for="contact in contacts">
+                        <div class="my-rectangle d-flex position-relative" v-for="contact, i in contacts" @click="chatAttiva(i)" :id="i">
                             <img class="my-img-w" :src="contact.avatar" alt="">
                             <div>
                                 <div>{{contact.name}}</div>
@@ -111,11 +111,10 @@
                         </div>
                     </div>
                     <div class="my-chat overflow-y-scroll">
-                        <div class="my-chatbox d-flex">
-                            <div class="my-chat-container d-flex flex-column" v-for="message, i in messages">
-                                <div class="msg-recieved">{{}} <div class="my-ora position-absolute bottom-0 end-0">{{messages.date}}</div></div>
-                                <div class="msg-recieved">hai steso i panni? <div class="my-ora position-absolute bottom-0 end-0">12.00</div></div>
-                                <div class="msg-sent">Tutto fatto! <div class="my-ora position-absolute bottom-0 end-0">12.00</div></div>
+                        <div class="my-chat-container d-flex flex-column">
+                            <div v-for="messages in contacts[contattoAttivo].messages">
+                                <div v-if="messages.status == 'received'" class="msg-recieved">{{messages.message}} <div class="my-ora position-absolute bottom-0 end-0">{{messages.date}}</div></div>
+                                <div v-else class="msg-sent">{{messages.message}} <div class="my-ora position-absolute bottom-0 end-0">{{messages.date}}</div></div>
                             </div>
                         </div>
                     </div>
