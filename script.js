@@ -171,11 +171,16 @@ createApp({
     },
     
     methods: {
-
+        caricaMessaggi(){
+            messaggi = this.contacts.messages
+            console.log(messaggi)
+            
+        }
     },
 
     mounted(){
         console.log(`Benvenuto`)
+        this.caricaMessaggi()
     }
 
 }).mount('#app')
