@@ -1,150 +1,149 @@
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-.my-bg-container{
-    background: linear-gradient(to bottom, #009688 0%,#009688 22%,#009688 22%,#dadbd4 22%);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/************ Containers ************/
+.my-bg-container {
+  background: linear-gradient(
+    to bottom,
+    #009688 0%,
+    #009688 22%,
+    #009688 22%,
+    #dadbd4 22%
+  );
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.my-pg-container{
-    width: 80%;
-    height: calc(100vh - 4rem);
-    display: flex;
-    border: 1px solid #c6c6c2;
+.my-pg-container {
+  width: 80%;
+  height: calc(100vh - 4rem);
+  display: flex;
+  border: 1px solid #c6c6c2;
 }
 
-.my-left-bar{
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
+.my-left-bar {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
 }
 
-.my-right-bar{
-    width: 60%;
-    display: flex;
-    flex-direction: column;
+.my-right-bar {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
 }
 
-.my-3-fa{
-    width: 130px;
-    justify-content: space-around;
-    align-items: center;
+.my-3-fa {
+  width: 130px;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.my-topbar{
-    display: flex;
-    justify-content: space-between;
-    background-color: #eaeaea;
-    height: 85px;
-    border: 1px solid #c6c6c2;
+.my-topbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #eaeaea;
+  height: 85px;
+  border: 1px solid #c6c6c2;
 }
 
-.my-img-w{
-    width: 88px;
-    border-radius: 50%;
-    padding: 1rem;
+.my-img-w {
+  width: 88px;
+  border-radius: 50%;
+  padding: 1rem;
 }
 
-
-.my-rectangle{
-    height: 85px;
-    border-bottom: 1px solid #c6c6c2;
-    border-top: 1px solid #c6c6c2;
-
+.my-rectangle {
+  height: 85px;
+  border-bottom: 1px solid #c6c6c2;
+  border-top: 1px solid #c6c6c2;
 }
-.my-rectangle:hover{
-    cursor: pointer;
+.my-rectangle:hover {
+  cursor: pointer;
 }
 
-#bg-blue{
-    background-color: #8edafc;
+#bg-blue {
+  background-color: #8edafc;
 }
 
-.my-search{
-    padding: 0.5rem;
+.my-search {
+  padding: 0.5rem;
 }
 
-.my-rounded-div{
-    width: 88px;
-    height: 83px;
-    border-radius: 50%;
-    justify-content: center;
-    align-items: center;
-
+.my-rounded-div {
+  width: 88px;
+  height: 83px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
 }
 
-.my-rounded-element{
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    background-color: white;
-    justify-content: center;
-    align-items: center;
-
+.my-rounded-element {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
 }
 
-.my-chat{
-    height: calc(100% - 170px);
-    background-image: url(./img/mine.jpg);
-    padding: 3rem;
+.my-chat {
+  height: calc(100% - 170px);
+  background-image: url(./img/mine.jpg);
+  padding: 3rem;
 }
 
-.my-rectangle-chat{
-    height: 85px;
-    border-bottom: 1px solid #c6c6c2;
-    border: 1px solid #c6c6c2;
-
+.my-rectangle-chat {
+  height: 85px;
+  border-bottom: 1px solid #c6c6c2;
+  border: 1px solid #c6c6c2;
 }
 
-.my-chat-container{
-    width: 80%;
-    height: 100%;
-    align-self: center;
-    justify-self: center;
-    margin: 3rem auto;
-    align-content: center;
-    
+.my-chat-container {
+  width: 80%;
+  height: 100%;
+  align-self: center;
+  justify-self: center;
+  margin: 3rem auto;
+  align-content: center;
 }
-.clicked{
-    background-color: lightgray;
+.clicked {
+  background-color: lightgray;
 }
-
-
 
 .msg-sent,
-.msg-recieved{
-    display: grid;
-    position: relative;
-    border-radius: 15px;
-    width: 300px;
-    height: 50px;
-    align-items: center;
-    padding: 0 1rem;
-    margin-bottom: 1rem;
+.msg-recieved {
+  display: grid;
+  position: relative;
+  border-radius: 15px;
+  width: 300px;
+  height: 50px;
+  align-items: center;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
 }
 
-.msg-sent{
-    background-color:#d5f9ba;
-    margin: 0 0 1rem auto;
+.msg-sent {
+  background-color: #d5f9ba;
+  margin: 0 0 1rem auto;
 }
 
-.msg-recieved{
-    background-color: white;
+.msg-recieved {
+  background-color: white;
 }
 
-.my-ora{
-    font-size: 12px;
-    color: lightgray;
-    margin: 0 5px;
+.my-ora {
+  font-size: 12px;
+  color: lightgray;
+  margin: 0 5px;
 }
 
-.my-gray{
-    color: gray;
+.my-gray {
+  color: gray;
 }

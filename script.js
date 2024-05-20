@@ -3,6 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            // array contatti
             contacts: [
                 {
                     name: 'Michele',
@@ -167,6 +168,7 @@ createApp({
                 }
             ],
 
+            // dichiaro variabili per funzioni (indice chat, nuovo messagio da pushare e input per filtrare contatti)
             contattoAttivo: 0,
             nuovoMessaggio: ``,
             inputContatti: ``,
@@ -174,11 +176,12 @@ createApp({
     },
     
     methods: {
+        // salvo indice chat attiva
         chatAttiva(indice){
             this.contattoAttivo = indice
         },
         
-
+        // funzione per pushare nelle chat cio che scivo nell input e ricevere risposta automatica
         aggiungiParola(){
             this.contacts[this.contattoAttivo].messages.push({
                 date: '10/01/2020 15:50:00',
@@ -196,12 +199,10 @@ createApp({
                 })
             }, 2000);
         },
-
-        
-        
     },
 
     computed: {
+        // variabile con funzione per filtrare i contatti 
         filtraContatti: function(){
             return this.contacts.filter((elemento) => {
                 return elemento.name.toLowerCase().match(this.inputContatti)
