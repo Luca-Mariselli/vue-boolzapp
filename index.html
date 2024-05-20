@@ -34,16 +34,16 @@
                     </div>
                         <div class="input-group my-search">
                             <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass" style="color: #cac9c9;"></i></span>
-                            <input type="text" v-model="trovaContatti" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
+                            <input type="text" v-model="inputContatti" @keyup="filtraContatti" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
                         </div>
                     <div class="my-scrollable d-flex flex-column overflow-y-scroll">
                         <div class="my-rectangle d-flex position-relative" v-for="contact, i in contacts" @click="chatAttiva(i)" :id="i">
                             <img class="my-img-w" :src="contact.avatar" alt="">
                             <div>
                                 <div>{{contact.name}}</div>
-                                <div>Ultimo messaggio inviato</div>
+                                <div>{{this.contacts[i].messages[this.contacts[i].messages.length - 1].message}}</div>
                             </div>
-                            <div class="my-ora position-absolute top-0 end-0">12.00</div>
+                            <div class="my-ora position-absolute top-0 end-0">{{this.contacts[i].messages[this.contacts[i].messages.length - 1].date.split(" ")[1].slice(0,5)}}</div>
                         </div>
                     </div>
                 </div>
@@ -61,8 +61,8 @@
                     <div class="my-chat overflow-y-scroll">
                         <div class="my-chat-container d-flex flex-column">
                             <div v-for="messages in contacts[contattoAttivo].messages">
-                                <div v-if="messages.status == 'received'" class="msg-recieved">{{messages.message}} <div class="my-ora position-absolute bottom-0 end-0">{{messages.date}}</div></div>
-                                <div v-else class="msg-sent">{{messages.message}} <div class="my-ora position-absolute bottom-0 end-0">{{messages.date}}</div></div>
+                                <div v-if="messages.status == 'received'" class="msg-recieved">{{messages.message}} <div class="my-ora position-absolute bottom-0 end-0">{{messages.date.split(" ")[1].slice(0,5)}}</div></div>
+                                <div v-else class="msg-sent">{{messages.message}} <div class="my-ora position-absolute bottom-0 end-0">{{messages.date.split(" ")[1].slice(0,5)}}</div></div>
                             </div>
                         </div>
                     </div>
