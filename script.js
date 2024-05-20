@@ -176,9 +176,6 @@ createApp({
     methods: {
         chatAttiva(indice){
             this.contattoAttivo = indice
-            if(indice = this.contattoAttivo){
-                document.getElementById(indice).classList.add(`clicked`)
-            }
         },
         
 

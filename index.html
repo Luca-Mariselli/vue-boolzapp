@@ -18,18 +18,18 @@
                 <!-- Leftbar -->
                 <div class="my-left-bar">
                     <div class="my-topbar">
-                        <div class="d-flex"><img class="my-img-w" src="./img/avatar_3.jpg" alt=""> <div class="align-content-center">Luca</div></div>
-                        <div class="d-flex">
-                            <div>x</div>
-                            <div>x</div>
-                            <div>x</div>
+                        <div class="d-flex"><img class="my-img-w" src="./img/avatar_3.jpg" alt=""> <div class="align-content-center fw-semibold">Luca</div></div>
+                        <div class="my-3-fa d-flex">
+                            <i class="fa-solid fa-circle-notch fs-4" style="color: #757a7a"></i>
+                            <i class="fa-solid fa-message fs-4" style="color: #757a7a"></i>
+                            <i class="fa-solid fa-ellipsis-vertical fs-4" style="color: #757a7a"></i>
                         </div>
                     </div>
                     <div id="bg-blue" class="my-rectangle d-flex">
                         <div class="d-flex my-rounded-div"><div class="d-flex my-rounded-element"><i class="fa-solid fa-bell-slash fs-4" style="color: #8edafc;"></i></div></div>
-                        <div>
-                            <div>Ricevi notifiche di nuovi messaggi</div>
-                            <div>Attiva notifiche desktop</div>
+                        <div class="d-flex flex-column justify-content-center">
+                            <div class="fw-semibold">Ricevi notifiche di nuovi messaggi</div>
+                            <div class="text-decoration-underline">Attiva notifiche desktop</div>
                         </div>
                     </div>
                         <div class="input-group my-search">
@@ -37,11 +37,15 @@
                             <input type="text" v-model="inputContatti"  class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
                         </div>
                     <div class="my-scrollable d-flex flex-column overflow-y-scroll">
-                        <div class="my-rectangle d-flex position-relative" v-for="contact, i in filtraContatti" @click="chatAttiva(i)" :id="i">
+                        <div 
+                        v-for="(contact, i) in filtraContatti" 
+                        :key="i" 
+                        @click="chatAttiva(i)" 
+                        :class="['my-rectangle', 'd-flex', 'position-relative', { clicked: contattoAttivo === i }]">
                             <img class="my-img-w" :src="contact.avatar" alt="">
-                            <div>
-                                <div>{{contact.name}}</div>
-                                <div>{{this.contacts[i].messages[this.contacts[i].messages.length - 1].message}}</div>
+                            <div class="d-flex flex-column justify-content-center">
+                                <div class="fw-semibold">{{contact.name}}</div>
+                                <div class="my-gray">{{this.contacts[i].messages[this.contacts[i].messages.length - 1].message}}</div>
                             </div>
                             <div class="my-ora position-absolute top-0 end-0">{{this.contacts[i].messages[this.contacts[i].messages.length - 1].date.split(" ")[1].slice(0,5)}}</div>
                         </div>
@@ -51,19 +55,17 @@
                 <!-- RightBar -->
                 <div class="my-right-bar">
                     <div class="my-topbar">
-                        <div class="d-flex"><img class="my-img-w" src="./img/avatar_1.jpg" alt=""> <div class="align-content-center">Michele</div></div>
-                        <div class="d-flex">
-                            <div>x</div>
-                            <div>x</div>
-                            <div>x</div>
+                        <div class="d-flex fw-semibold"><img class="my-img-w" :src="contacts[contattoAttivo].avatar" alt=""> <div class="align-content-center">{{contacts[contattoAttivo].name}}</div></div>
+                        <div class="my-3-fa d-flex">
+                            <i class="fa-solid fa-magnifying-glass fs-4" style="color: #757a7a"></i>
+                            <i class="fa-solid fa-paperclip fs-4" style="color: #757a7a"></i>
+                            <i class="fa-solid fa-ellipsis-vertical fs-4" style="color: #757a7a"></i>
                         </div>
                     </div>
                     <div class="my-chat overflow-y-scroll">
-                        <div class="my-chat-container d-flex flex-column">
-                            <div v-for="messages in contacts[contattoAttivo].messages">
-                                <div v-if="messages.status == 'received'" class="msg-recieved">{{messages.message}} <div class="my-ora position-absolute bottom-0 end-0">{{messages.date.split(" ")[1].slice(0,5)}}</div></div>
-                                <div v-else class="msg-sent">{{messages.message}} <div class="my-ora position-absolute bottom-0 end-0">{{messages.date.split(" ")[1].slice(0,5)}}</div></div>
-                            </div>
+                        <div class="d-flex" v-for="messages in contacts[contattoAttivo].messages">
+                            <div v-if="messages.status == 'received'" class="msg-recieved">{{messages.message}} <div class="my-ora position-absolute bottom-0 end-0">{{messages.date.split(" ")[1].slice(0,5)}}</div></div>
+                            <div v-else class="msg-sent">{{messages.message}} <div class="my-ora position-absolute bottom-0 end-0">{{messages.date.split(" ")[1].slice(0,5)}}</div></div>
                         </div>
                     </div>
                     

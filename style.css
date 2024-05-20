@@ -30,7 +30,12 @@
     width: 60%;
     display: flex;
     flex-direction: column;
+}
 
+.my-3-fa{
+    width: 130px;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .my-topbar{
@@ -88,6 +93,7 @@
 .my-chat{
     height: calc(100% - 170px);
     background-image: url(./img/mine.jpg);
+    padding: 3rem;
 }
 
 .my-rectangle-chat{
@@ -110,18 +116,11 @@
     background-color: lightgray;
 }
 
-.msg-sent{
-    background-color:#d5f9ba;
-    margin-right: 0;
-}
 
-.msg-recieved{
-    background-color: white;
-}
 
 .msg-sent,
 .msg-recieved{
-    display: flex;
+    display: grid;
     position: relative;
     border-radius: 15px;
     width: 300px;
@@ -131,8 +130,21 @@
     margin-bottom: 1rem;
 }
 
+.msg-sent{
+    background-color:#d5f9ba;
+    margin: 0 0 1rem auto;
+}
+
+.msg-recieved{
+    background-color: white;
+}
+
 .my-ora{
     font-size: 12px;
     color: lightgray;
     margin: 0 5px;
+}
+
+.my-gray{
+    color: gray;
 }
