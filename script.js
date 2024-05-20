@@ -170,7 +170,6 @@ createApp({
             contattoAttivo: 0,
             nuovoMessaggio: ``,
             inputContatti: ``,
-            
         }
     },
     
@@ -201,6 +200,7 @@ createApp({
             }, 2000);
         },
 
+        
         
     },
 

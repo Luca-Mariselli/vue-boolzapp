@@ -34,10 +34,10 @@
                     </div>
                         <div class="input-group my-search">
                             <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass" style="color: #cac9c9;"></i></span>
-                            <input type="text" v-model="inputContatti" @keyup="filtraContatti" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
+                            <input type="text" v-model="inputContatti"  class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
                         </div>
                     <div class="my-scrollable d-flex flex-column overflow-y-scroll">
-                        <div class="my-rectangle d-flex position-relative" v-for="contact, i in contacts" @click="chatAttiva(i)" :id="i">
+                        <div class="my-rectangle d-flex position-relative" v-for="contact, i in filtraContatti" @click="chatAttiva(i)" :id="i">
                             <img class="my-img-w" :src="contact.avatar" alt="">
                             <div>
                                 <div>{{contact.name}}</div>
@@ -70,8 +70,8 @@
 
                     <div class="my-rectangle-chat d-flex p-3">
                         <i class="align-self-center fa-regular fa-face-smile ms-3 me-4 fs-4" style="color: #757a7a"></i>
-                        <input type="text" class="form-control" v-model="nuovoMessaggio" placeholder="Scrivi un messaggio" aria-label="Username" aria-describedby="basic-addon1">
-                        <i @click="aggiungiParola()" class="align-self-center fa-solid fa-microphone ms-4 me-3 fs-4" style="color: #757a7a"></i>
+                        <input type="text" @keydown.enter="aggiungiParola()" class="form-control" v-model="nuovoMessaggio" placeholder="Scrivi un messaggio" aria-label="Username" aria-describedby="basic-addon1">
+                        <i class="align-self-center fa-solid fa-microphone ms-4 me-3 fs-4" style="color: #757a7a"></i>
                     </div>
                 </div>
             </div>
