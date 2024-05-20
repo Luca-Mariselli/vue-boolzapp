@@ -54,6 +54,9 @@
     border-top: 1px solid #c6c6c2;
 
 }
+.my-rectangle:hover{
+    cursor: pointer;
+}
 
 #bg-blue{
     background-color: #8edafc;

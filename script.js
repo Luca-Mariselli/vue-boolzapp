@@ -168,20 +168,49 @@ createApp({
             ],
 
             contattoAttivo: 0,
-            itemFocus: 0
-            
+            itemFocus: 0,
+            nuovoMessaggio: ``,
+            inputContatti: ``,
         }
     },
     
     methods: {
         chatAttiva(indice){
             this.contattoAttivo = indice
-            this.itemFocus = indice
-            if(this.itemFocus = this.contattoAttivo){
-                document.getElementById(this.contattoAttivo).classList.add("clicked");
-                
+        },
+
+        aggiungiParola(){
+            this.contacts[this.contattoAttivo].messages.push({
+                date: '10/01/2020 15:50:00',
+                message: this.nuovoMessaggio,
+                status: 'sent'
+            })
+
+            console.log(this.nuovoMessaggio)
+            setTimeout(() => {
+                this.contacts[this.contattoAttivo].messages.push({
+                    date: '10/01/2020 15:50:00',
+                    message: `Ok`,
+                    status: 'received'
+                })
+            }, 2000);
+        },
+
+        trovaContatti() {
+            // Declare variables
+            let filter = this.inputContatti.toUpperCase();
+          
+            // Loop through all list items, and hide those who don't match the search query
+            for (i = 0; i < 8; i++) {
+              a = document.getElementById(i);
+              txtValue = a.textContent || a.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                a.style.display = "";
+              } else {
+                a.style.display = "none";
+              }
             }
-        }
+        },
     },
 
     mounted(){
